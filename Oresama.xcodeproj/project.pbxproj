@@ -1,0 +1,650 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F4CEB737217DF855006809F7 /* Oresama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CEB72D217DF854006809F7 /* Oresama.framework */; };
+		F4CEB748217DF879006809F7 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CEB747217DF879006809F7 /* Future.swift */; };
+		F4CEB74A217DF88E006809F7 /* FutureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CEB749217DF88E006809F7 /* FutureTests.swift */; };
+		F4CEB752217DF8C0006809F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CEB751217DF8C0006809F7 /* AppDelegate.swift */; };
+		F4CEB75F217DF962006809F7 /* Oresama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CEB72D217DF854006809F7 /* Oresama.framework */; };
+		F4CEB760217DF962006809F7 /* Oresama.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4CEB72D217DF854006809F7 /* Oresama.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4CEB765217DF9D5006809F7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4CEB764217DF9D5006809F7 /* MainMenu.xib */; };
+		F4CEB767217DFAB7006809F7 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CEB766217DFAB7006809F7 /* Promise.swift */; };
+		F4CEB769217DFBA1006809F7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CEB768217DFBA1006809F7 /* Result.swift */; };
+		F4CEB76B217DFF13006809F7 /* PromiseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CEB76A217DFF13006809F7 /* PromiseTest.swift */; };
+		F4CEB76D217E0385006809F7 /* ResultTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CEB76C217E0385006809F7 /* ResultTest.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4CEB738217DF855006809F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4CEB724217DF854006809F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4CEB72C217DF854006809F7;
+			remoteInfo = Oresama;
+		};
+		F4CEB75D217DF92A006809F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4CEB724217DF854006809F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4CEB74E217DF8C0006809F7;
+			remoteInfo = Host;
+		};
+		F4CEB761217DF962006809F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4CEB724217DF854006809F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4CEB72C217DF854006809F7;
+			remoteInfo = Oresama;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F4CEB763217DF962006809F7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F4CEB760217DF962006809F7 /* Oresama.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F4CEB72D217DF854006809F7 /* Oresama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Oresama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4CEB731217DF854006809F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4CEB736217DF855006809F7 /* OresamaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OresamaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4CEB73D217DF855006809F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4CEB747217DF879006809F7 /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
+		F4CEB749217DF88E006809F7 /* FutureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureTests.swift; sourceTree = "<group>"; };
+		F4CEB74F217DF8C0006809F7 /* Host.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Host.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4CEB751217DF8C0006809F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4CEB758217DF8C2006809F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4CEB764217DF9D5006809F7 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		F4CEB766217DFAB7006809F7 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
+		F4CEB768217DFBA1006809F7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		F4CEB76A217DFF13006809F7 /* PromiseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseTest.swift; sourceTree = "<group>"; };
+		F4CEB76C217E0385006809F7 /* ResultTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTest.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4CEB72A217DF854006809F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4CEB733217DF855006809F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4CEB737217DF855006809F7 /* Oresama.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4CEB74C217DF8C0006809F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4CEB75F217DF962006809F7 /* Oresama.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4CEB723217DF854006809F7 = {
+			isa = PBXGroup;
+			children = (
+				F4CEB72F217DF854006809F7 /* Oresama */,
+				F4CEB73A217DF855006809F7 /* OresamaTests */,
+				F4CEB750217DF8C0006809F7 /* Host */,
+				F4CEB72E217DF854006809F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4CEB72E217DF854006809F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4CEB72D217DF854006809F7 /* Oresama.framework */,
+				F4CEB736217DF855006809F7 /* OresamaTests.xctest */,
+				F4CEB74F217DF8C0006809F7 /* Host.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4CEB72F217DF854006809F7 /* Oresama */ = {
+			isa = PBXGroup;
+			children = (
+				F4CEB747217DF879006809F7 /* Future.swift */,
+				F4CEB766217DFAB7006809F7 /* Promise.swift */,
+				F4CEB768217DFBA1006809F7 /* Result.swift */,
+				F4CEB731217DF854006809F7 /* Info.plist */,
+			);
+			path = Oresama;
+			sourceTree = "<group>";
+		};
+		F4CEB73A217DF855006809F7 /* OresamaTests */ = {
+			isa = PBXGroup;
+			children = (
+				F4CEB76C217E0385006809F7 /* ResultTest.swift */,
+				F4CEB749217DF88E006809F7 /* FutureTests.swift */,
+				F4CEB76A217DFF13006809F7 /* PromiseTest.swift */,
+				F4CEB73D217DF855006809F7 /* Info.plist */,
+			);
+			path = OresamaTests;
+			sourceTree = "<group>";
+		};
+		F4CEB750217DF8C0006809F7 /* Host */ = {
+			isa = PBXGroup;
+			children = (
+				F4CEB751217DF8C0006809F7 /* AppDelegate.swift */,
+				F4CEB764217DF9D5006809F7 /* MainMenu.xib */,
+				F4CEB758217DF8C2006809F7 /* Info.plist */,
+			);
+			path = Host;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F4CEB728217DF854006809F7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F4CEB72C217DF854006809F7 /* Oresama */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4CEB741217DF855006809F7 /* Build configuration list for PBXNativeTarget "Oresama" */;
+			buildPhases = (
+				F4CEB728217DF854006809F7 /* Headers */,
+				F4CEB729217DF854006809F7 /* Sources */,
+				F4CEB72A217DF854006809F7 /* Frameworks */,
+				F4CEB72B217DF854006809F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Oresama;
+			productName = Oresama;
+			productReference = F4CEB72D217DF854006809F7 /* Oresama.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F4CEB735217DF855006809F7 /* OresamaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4CEB744217DF855006809F7 /* Build configuration list for PBXNativeTarget "OresamaTests" */;
+			buildPhases = (
+				F4CEB732217DF855006809F7 /* Sources */,
+				F4CEB733217DF855006809F7 /* Frameworks */,
+				F4CEB734217DF855006809F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4CEB739217DF855006809F7 /* PBXTargetDependency */,
+				F4CEB75E217DF92A006809F7 /* PBXTargetDependency */,
+			);
+			name = OresamaTests;
+			productName = OresamaTests;
+			productReference = F4CEB736217DF855006809F7 /* OresamaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F4CEB74E217DF8C0006809F7 /* Host */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4CEB75A217DF8C2006809F7 /* Build configuration list for PBXNativeTarget "Host" */;
+			buildPhases = (
+				F4CEB74B217DF8C0006809F7 /* Sources */,
+				F4CEB74C217DF8C0006809F7 /* Frameworks */,
+				F4CEB74D217DF8C0006809F7 /* Resources */,
+				F4CEB763217DF962006809F7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4CEB762217DF962006809F7 /* PBXTargetDependency */,
+			);
+			name = Host;
+			productName = Host;
+			productReference = F4CEB74F217DF8C0006809F7 /* Host.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4CEB724217DF854006809F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Hori,Masaki";
+				TargetAttributes = {
+					F4CEB72C217DF854006809F7 = {
+						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
+					};
+					F4CEB735217DF855006809F7 = {
+						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
+						TestTargetID = F4CEB74E217DF8C0006809F7;
+					};
+					F4CEB74E217DF8C0006809F7 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = F4CEB727217DF854006809F7 /* Build configuration list for PBXProject "Oresama" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4CEB723217DF854006809F7;
+			productRefGroup = F4CEB72E217DF854006809F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4CEB72C217DF854006809F7 /* Oresama */,
+				F4CEB735217DF855006809F7 /* OresamaTests */,
+				F4CEB74E217DF8C0006809F7 /* Host */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4CEB72B217DF854006809F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4CEB734217DF855006809F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4CEB74D217DF8C0006809F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4CEB765217DF9D5006809F7 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4CEB729217DF854006809F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4CEB769217DFBA1006809F7 /* Result.swift in Sources */,
+				F4CEB748217DF879006809F7 /* Future.swift in Sources */,
+				F4CEB767217DFAB7006809F7 /* Promise.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4CEB732217DF855006809F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4CEB76D217E0385006809F7 /* ResultTest.swift in Sources */,
+				F4CEB74A217DF88E006809F7 /* FutureTests.swift in Sources */,
+				F4CEB76B217DFF13006809F7 /* PromiseTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4CEB74B217DF8C0006809F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4CEB752217DF8C0006809F7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4CEB739217DF855006809F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4CEB72C217DF854006809F7 /* Oresama */;
+			targetProxy = F4CEB738217DF855006809F7 /* PBXContainerItemProxy */;
+		};
+		F4CEB75E217DF92A006809F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4CEB74E217DF8C0006809F7 /* Host */;
+			targetProxy = F4CEB75D217DF92A006809F7 /* PBXContainerItemProxy */;
+		};
+		F4CEB762217DF962006809F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4CEB72C217DF854006809F7 /* Oresama */;
+			targetProxy = F4CEB761217DF962006809F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F4CEB73F217DF855006809F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F4CEB740217DF855006809F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F4CEB742217DF855006809F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Oresama/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.masakih.Oresama;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		F4CEB743217DF855006809F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Oresama/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.masakih.Oresama;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		F4CEB745217DF855006809F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = OresamaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.masakih.OresamaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Host.app/Contents/MacOS/Host";
+			};
+			name = Debug;
+		};
+		F4CEB746217DF855006809F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = OresamaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.masakih.OresamaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Host.app/Contents/MacOS/Host";
+			};
+			name = Release;
+		};
+		F4CEB75B217DF8C2006809F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_ENTITLEMENTS = Host/Host.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Host/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.masakih.Host;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		F4CEB75C217DF8C2006809F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_ENTITLEMENTS = Host/Host.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Host/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.masakih.Host;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4CEB727217DF854006809F7 /* Build configuration list for PBXProject "Oresama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4CEB73F217DF855006809F7 /* Debug */,
+				F4CEB740217DF855006809F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4CEB741217DF855006809F7 /* Build configuration list for PBXNativeTarget "Oresama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4CEB742217DF855006809F7 /* Debug */,
+				F4CEB743217DF855006809F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4CEB744217DF855006809F7 /* Build configuration list for PBXNativeTarget "OresamaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4CEB745217DF855006809F7 /* Debug */,
+				F4CEB746217DF855006809F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4CEB75A217DF8C2006809F7 /* Build configuration list for PBXNativeTarget "Host" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4CEB75B217DF8C2006809F7 /* Debug */,
+				F4CEB75C217DF8C2006809F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4CEB724217DF854006809F7 /* Project object */;
+}
