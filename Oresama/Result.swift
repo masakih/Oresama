@@ -100,3 +100,20 @@ public extension Result {
         return self
     }
 }
+
+
+extension Result: Equatable where T: Equatable {
+    
+    public static func == (lhs: Result, rhs: Result) -> Bool {
+        
+        switch (lhs, rhs) {
+            
+        case let (.value(lval), .value(rval)): return lval == rval
+            
+        case let (.error(lerr as NSError), .error(rerr as NSError)): return lerr == rerr
+            
+        default: return false
+        }
+        
+    }
+}

@@ -150,5 +150,14 @@ class ResultTest: XCTestCase {
         
         waitForExpectations(timeout: 0)
     }
-
+    
+    func testEquatable() {
+        
+        let result1 = Result(1)
+        let result2 = Result(1)
+        let result3 = Result(2)
+        
+        XCTAssertEqual(result1, result2)
+        XCTAssertNotEqual(result1, result3)
+    }
 }

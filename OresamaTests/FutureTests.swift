@@ -649,5 +649,14 @@ class FutureTests: XCTestCase {
         
         waitForExpectations(timeout: 3)
     }
-
+    
+    func testEquatable() {
+        
+        let future1 = Future(1)
+        let future2 = Future(1)
+        let future3 = Future(2)
+        
+        XCTAssertEqual(future1, future2)
+        XCTAssertNotEqual(future1, future3)
+    }
 }

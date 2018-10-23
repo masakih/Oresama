@@ -125,9 +125,9 @@
 		F4CEB72F217DF854006809F7 /* Oresama */ = {
 			isa = PBXGroup;
 			children = (
+				F4CEB768217DFBA1006809F7 /* Result.swift */,
 				F4CEB747217DF879006809F7 /* Future.swift */,
 				F4CEB766217DFAB7006809F7 /* Promise.swift */,
-				F4CEB768217DFBA1006809F7 /* Result.swift */,
 				F4CEB731217DF854006809F7 /* Info.plist */,
 			);
 			path = Oresama;
