@@ -160,9 +160,9 @@ public extension Future {
         
         onComplete { result in
             
-            if case let .value(v) = result {
+            if case let .value(value) = result {
                 
-                callback(v)
+                callback(value)
             }
         }
         
@@ -174,9 +174,9 @@ public extension Future {
         
         onComplete { result in
             
-            if case let .error(e) = result {
+            if case let .error(error) = result {
                 
-                callback(e)
+                callback(error)
             }
         }
         
@@ -253,7 +253,7 @@ public extension Future {
                     
                 case .value: return result
                     
-                case let .error(err): return .value(try s(err))
+                case let .error(error): return .value(try s(error))
                 }
                 
             } catch {

@@ -54,9 +54,9 @@ public extension Result {
         
         switch self {
             
-        case let .value(val): return .value(f(val))
+        case let .value(value): return .value(f(value))
             
-        case let .error(err): return .error(err)
+        case let .error(error): return .error(error)
         }
     }
     
@@ -64,9 +64,9 @@ public extension Result {
         
         switch self {
             
-        case let .value(val): return f(val)
+        case let .value(value): return f(value)
             
-        case let .error(err): return .error(err)
+        case let .error(error): return .error(error)
         }
     }
 }
@@ -79,7 +79,7 @@ public extension Result {
         
         switch self {
             
-        case let .value(val): f(val)
+        case let .value(value): f(value)
             
         case .error: ()
         }
@@ -94,7 +94,7 @@ public extension Result {
             
         case .value: ()
             
-        case let .error(err): f(err)
+        case let .error(error): f(error)
         }
         
         return self
