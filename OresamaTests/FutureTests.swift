@@ -659,4 +659,55 @@ class FutureTests: XCTestCase {
         XCTAssertEqual(future1, future2)
         XCTAssertNotEqual(future1, future3)
     }
+    
+    func testFunctor() {
+        
+        func i<T>(_ x: T) -> T { return x }
+        
+        let future = Future(1)
+        
+        XCTAssertEqual(future.map(i), i(future))
+        
+        ///
+        
+        func f(_ j: Int) -> String {
+            
+            return String(j)
+        }
+        func g(_ s: String) -> Double {
+            
+            return Double(s)!
+        }
+        
+        XCTAssertEqual(future.map( { g(f($0)) } ),
+                       future.map(f).map(g))
+    }
+    
+    func testMonad() {
+        
+        let value = 1
+        
+        func f(_ i: Int) -> Future<String> {
+            
+            return Future(String(i))
+        }
+        
+        XCTAssertEqual(Future(value).flatMap(f),
+                       f(value))
+        
+        ///
+        let future = Future(2)
+        
+        XCTAssertEqual(future.flatMap( { Future($0) } ),
+                       future)
+        
+        ///
+        func g(_ s: String) -> Future<Double> {
+            
+            return Future(Double(s)!)
+        }
+        
+        XCTAssertEqual(future.flatMap( { f($0).flatMap(g) } ),
+                       future.flatMap(f).flatMap(g))
+    }
 }

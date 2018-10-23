@@ -160,4 +160,55 @@ class ResultTest: XCTestCase {
         XCTAssertEqual(result1, result2)
         XCTAssertNotEqual(result1, result3)
     }
+    
+    func testFunctor() {
+        
+        func i<T>(_ x: T) -> T { return x }
+        
+        let result = Result(1)
+        
+        XCTAssertEqual(result.map(i), i(result))
+        
+        ///
+        
+        func f(_ j: Int) -> String {
+            
+            return String(j)
+        }
+        func g(_ s: String) -> Double {
+            
+            return Double(s)!
+        }
+        
+        XCTAssertEqual(result.map( { g(f($0)) } ),
+                       result.map(f).map(g))
+    }
+    
+    func testMonad() {
+        
+        let value = 1
+        
+        func f(_ i: Int) -> Result<String> {
+            
+            return Result(String(i))
+        }
+        
+        XCTAssertEqual(Result(value).flatMap(f),
+                        f(value))
+        
+        ///
+        let result = Result(2)
+        
+        XCTAssertEqual(result.flatMap( { Result($0) } ),
+                       result)
+        
+        ///
+        func g(_ s: String) -> Result<Double> {
+            
+            return Result(Double(s)!)
+        }
+        
+        XCTAssertEqual(result.flatMap( { f($0).flatMap(g) } ),
+                       result.flatMap(f).flatMap(g))
+    }
 }
