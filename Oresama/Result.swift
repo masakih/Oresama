@@ -11,7 +11,6 @@ import Foundation
 
 // MARK: - Result<T>
 
-
 public enum Result<T> {
     
     case value(T)

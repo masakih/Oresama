@@ -209,7 +209,7 @@ class ResultTest: XCTestCase {
         }
         
         XCTAssertEqual(Result(value).flatMap(f),
-                        f(value))
+                       f(value))
         
         ///
         let result = Result(2)

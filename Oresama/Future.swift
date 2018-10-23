@@ -10,6 +10,7 @@ import Foundation
 
 
 // MARK: - FutureError
+
 public enum FutureError: Error {
     
     case unsolvedFuture
@@ -21,6 +22,7 @@ public enum FutureError: Error {
 // MARK: - Future<T>
 
 public final class Future<T> {
+    
     
     // MARK: - Public
     
@@ -119,6 +121,7 @@ public final class Future<T> {
         }
     }
 }
+
 
 // MARK: - Public
 
