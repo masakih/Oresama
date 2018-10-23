@@ -102,7 +102,7 @@ class PromiseTest: XCTestCase {
             }
             .onFailure { _ in
                 
-                XCTFail()
+                XCTFail("Must not reach.")
                 
                 ex.fulfill()
         }
@@ -127,7 +127,7 @@ class PromiseTest: XCTestCase {
             }
             .onFailure { _ in
                 
-                XCTFail()
+                XCTFail("Must not reach.")
                 
                 ex.fulfill()
         }

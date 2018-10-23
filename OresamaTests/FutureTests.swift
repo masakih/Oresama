@@ -27,6 +27,7 @@ class FutureTests: XCTestCase {
         Future<Int> {
             sleep(1)
             first = false
+            
             return 1
             }
             .onSuccess { _ in
@@ -82,6 +83,7 @@ class FutureTests: XCTestCase {
         let ex = expectation(description: "Future")
         Future<Int> {
             sleep(1)
+            
             return 5
             }
             .onSuccess { val in
@@ -101,11 +103,11 @@ class FutureTests: XCTestCase {
         
         let ex = expectation(description: "Future")
         Future<Int>(FutureTestError.testError)
-            .onSuccess { val in
+            .onSuccess { _ in
                 XCTFail("Fugaaaaaa")
                 ex.fulfill()
             }
-            .onFailure { error in
+            .onFailure { _ in
                 ex.fulfill()
         }
         
@@ -117,12 +119,12 @@ class FutureTests: XCTestCase {
         let ex = expectation(description: "Future")
         let ex2 = expectation(description: "Future2")
         Future<Int>(FutureTestError.testError)
-            .onSuccess { val in
+            .onSuccess { _ in
                 XCTFail("Fugaaaaaa")
                 ex.fulfill()
                 ex2.fulfill()
             }
-            .onFailure { error in
+            .onFailure { _ in
                 ex.fulfill()
             }
             .onFailure { _ in
@@ -139,11 +141,11 @@ class FutureTests: XCTestCase {
             sleep(1)
             throw FutureTestError.testError
             }
-            .onSuccess { val in
+            .onSuccess { _ in
                 XCTFail("Fugaaaaaa")
                 ex.fulfill()
             }
-            .onFailure { error in
+            .onFailure { _ in
                 ex.fulfill()
         }
         
@@ -162,6 +164,7 @@ class FutureTests: XCTestCase {
         
         let f = Future<Int> {
             sleep(1)
+            
             return 1000
         }
         
@@ -172,6 +175,7 @@ class FutureTests: XCTestCase {
         
         let f = Future<Int> {
             sleep(1)
+            
             return 1000
         }
         
@@ -182,6 +186,7 @@ class FutureTests: XCTestCase {
         
         let f = Future<Int> {
             sleep(1)
+            
             return 1000
         }
         
@@ -192,10 +197,10 @@ class FutureTests: XCTestCase {
         
         Future<String> { () -> String in
             sleep(1)
+            
             return "Hoge"
             }
-            .transform( { (s: String) -> String in "Fuga" },
-                        { err -> Error in FutureTestError.testError} )
+            .transform({ (_: String) -> String in "Fuga" }, { _ -> Error in FutureTestError.testError })
             .onSuccess { val in
                 
                 XCTAssertEqual(val, "Fuga")
@@ -209,9 +214,8 @@ class FutureTests: XCTestCase {
     func testTransform2() {
         
         Future<String>(FutureTestError.testError)
-            .transform( { (s: String) -> String in "Fuga" },
-                        { err -> Error in FutureTestError.testError2} )
-            .onSuccess { val in
+            .transform({ (_: String) -> String in "Fuga" }, { _ -> Error in FutureTestError.testError2 })
+            .onSuccess { _ in
                 
                 XCTFail("testTransform2")
             }
@@ -233,10 +237,11 @@ class FutureTests: XCTestCase {
         let ex = expectation(description: "Future")
         Future<String> {
             sleep(1)
+            
             return "Hoge"
             }
             .map { $0.count }
-            .onSuccess { val in
+            .onSuccess { _ in
                 ex.fulfill()
             }
             .onFailure { error in
@@ -269,6 +274,7 @@ class FutureTests: XCTestCase {
         
         let f1 = Future<Int> {
             sleep(1)
+            
             return 1
         }
         
@@ -276,12 +282,12 @@ class FutureTests: XCTestCase {
             .flatMap { n1 in f1.map { n2 in n1 * n2 } }
             .onSuccess { val in
                 if val != 2 {
-                    XCTFail()
+                    XCTFail("Must not reach.")
                 }
                 ex.fulfill()
             }
             .onFailure { _ in
-                XCTFail()
+                XCTFail("Must not reach.")
                 ex.fulfill()
         }
 
@@ -297,7 +303,7 @@ class FutureTests: XCTestCase {
         Future(2)
             .flatMap { n1 in f1.map { n2 in n1 * n2 } }
             .onSuccess { _ in
-                XCTFail()
+                XCTFail("Must not reach.")
                 ex.fulfill()
             }
             .onFailure { _ in
@@ -316,7 +322,7 @@ class FutureTests: XCTestCase {
         Future<Int>(FutureTestError.testError)
             .flatMap { n1 in f1.map { n2 in n1 * n2 } }
             .onSuccess { _ in
-                XCTFail()
+                XCTFail("Must not reach.")
                 ex.fulfill()
             }
             .onFailure { _ in
@@ -335,7 +341,7 @@ class FutureTests: XCTestCase {
         Future<Int>(FutureTestError.testError)
             .flatMap { n1 in f1.map { n2 in n1 * n2 } }
             .onSuccess { _ in
-                XCTFail()
+                XCTFail("Must not reach.")
                 ex.fulfill()
             }
             .onFailure { _ in
@@ -350,6 +356,7 @@ class FutureTests: XCTestCase {
         let ex = expectation(description: "Future")
         Future<Int> {
             sleep(1)
+            
             return 5
             }
             .filter { $0 == 5}
@@ -369,6 +376,7 @@ class FutureTests: XCTestCase {
         let ex = expectation(description: "Future")
         Future<Int> {
             sleep(1)
+            
             return 5
             }
             .filter { $0 > 5}
@@ -376,7 +384,7 @@ class FutureTests: XCTestCase {
                 XCTFail("Hogeeeeeeee")
                 ex.fulfill()
             }
-            .onFailure { error in
+            .onFailure { _ in
                 ex.fulfill()
         }
         
@@ -393,6 +401,7 @@ class FutureTests: XCTestCase {
                     e == FutureTestError.testError else {
                         throw $0
                 }
+                
                 return 10
             }
             .onSuccess {
@@ -433,10 +442,10 @@ class FutureTests: XCTestCase {
         
         Future(2)
             .flatMap { n1 in f1.map { n2 in n1 * n2 } }
-            .recover { e in -1000 }
+            .recover { _ in -1000 }
             .onSuccess { val in
                 if val > 0 {
-                    XCTFail()
+                    XCTFail("Must not reach.")
                 }
                 ex.fulfill()
             }
@@ -451,15 +460,16 @@ class FutureTests: XCTestCase {
         
         let f1 = Future<Int> {
             sleep(1)
+            
             return 1
         }
         
         Future<Int>(FutureTestError.testError)
             .flatMap { n1 in f1.map { n2 in n1 * n2 } }
-            .recover { e in -10000 }
+            .recover { _ in -10000 }
             .onSuccess { val in
                 if val > 0 {
-                    XCTFail()
+                    XCTFail("Must not reach.")
                 }
                 ex.fulfill()
             }
@@ -480,6 +490,7 @@ class FutureTests: XCTestCase {
                     e == FutureTestError.testError else {
                         throw $0
                 }
+                
                 return 10
             }
             .onSuccess {
@@ -506,6 +517,7 @@ class FutureTests: XCTestCase {
                         e == FutureTestError.testError else {
                             throw error
                     }
+                    
                     return 10
                 }
             }
@@ -550,7 +562,7 @@ class FutureTests: XCTestCase {
             .recoverWith { _ in Future(-1000) }
             .onSuccess { val in
                 if val > 0 {
-                    XCTFail()
+                    XCTFail("Must not reach.")
                 }
                 ex.fulfill()
             }
@@ -565,6 +577,7 @@ class FutureTests: XCTestCase {
         
         let f1 = Future<Int> {
             sleep(1)
+            
             return 1
         }
         
@@ -573,7 +586,7 @@ class FutureTests: XCTestCase {
             .recoverWith { _ in Future(-10000) }
             .onSuccess { val in
                 if val > 0 {
-                    XCTFail()
+                    XCTFail("Must not reach.")
                 }
                 ex.fulfill()
             }
@@ -595,6 +608,7 @@ class FutureTests: XCTestCase {
                         e == FutureTestError.testError else {
                             throw error
                     }
+                    
                     return 10
                 }
             }
@@ -619,7 +633,8 @@ class FutureTests: XCTestCase {
         Future<Int>(6)
             .andThen { _ in
                 guard v == 0 else {
-                    XCTFail()
+                    XCTFail("Must not reach.")
+                    
                     return
                 }
                 sleep(1)
@@ -627,7 +642,8 @@ class FutureTests: XCTestCase {
             }
             .andThen { _ in
                 guard v == 4 else {
-                    XCTFail()
+                    XCTFail("Must not reach.")
+                    
                     return
                 }
                 sleep(1)
@@ -635,14 +651,16 @@ class FutureTests: XCTestCase {
             }
             .andThen { _ in
                 guard v == 5 else {
-                    XCTFail()
+                    XCTFail("Must not reach.")
+                    
                     return
                 }
                 ex.fulfill()
             }
             .onSuccess {
                 guard $0 == 6 else {
-                    XCTFail()
+                    XCTFail("Must not reach.")
+                    
                     return
                 }
         }
@@ -687,7 +705,7 @@ class FutureTests: XCTestCase {
             return Double(s)!
         }
         
-        XCTAssertEqual(future.map( { g(f($0)) } ),
+        XCTAssertEqual(future.map({ g(f($0)) }),
                        future.map(f).map(g))
     }
     
@@ -706,7 +724,7 @@ class FutureTests: XCTestCase {
         ///
         let future = Future(2)
         
-        XCTAssertEqual(future.flatMap( { Future($0) } ),
+        XCTAssertEqual(future.flatMap({ Future($0) }),
                        future)
         
         ///
@@ -715,7 +733,7 @@ class FutureTests: XCTestCase {
             return Future(Double(s)!)
         }
         
-        XCTAssertEqual(future.flatMap( { f($0).flatMap(g) } ),
+        XCTAssertEqual(future.flatMap({ f($0).flatMap(g) }),
                        future.flatMap(f).flatMap(g))
     }
 }

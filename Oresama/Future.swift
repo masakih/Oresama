@@ -299,7 +299,8 @@ extension Future: Equatable where T: Equatable {
             
         case let (.error(lerr as NSError), .error(rerr as NSError)): return lerr == rerr
             
-        default: return false 
+        default: return false
+            
         }
     }
 }

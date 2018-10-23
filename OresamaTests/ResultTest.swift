@@ -21,7 +21,8 @@ class ResultTest: XCTestCase {
         
         guard let val = result.value else {
             
-            XCTFail()
+            XCTFail("Must not reach.")
+            
             return
         }
         
@@ -34,7 +35,8 @@ class ResultTest: XCTestCase {
         
         guard let err = (result.error as NSError?) else {
             
-            XCTFail()
+            XCTFail("Must not reach.")
+            
             return
         }
         
@@ -49,7 +51,8 @@ class ResultTest: XCTestCase {
         
         guard let val = new.value else {
             
-            XCTFail()
+            XCTFail("Must not reach.")
+            
             return
         }
         
@@ -64,7 +67,8 @@ class ResultTest: XCTestCase {
         
         guard let err = (new.error as NSError?) else {
             
-            XCTFail()
+            XCTFail("Must not reach.")
+            
             return
         }
         
@@ -79,7 +83,8 @@ class ResultTest: XCTestCase {
         
         guard let val = new.value else {
             
-            XCTFail()
+            XCTFail("Must not reach.")
+            
             return
         }
         
@@ -94,7 +99,8 @@ class ResultTest: XCTestCase {
         
         guard let err = (new.error as NSError?) else {
             
-            XCTFail()
+            XCTFail("Must not reach.")
+            
             return
         }
         
@@ -109,7 +115,8 @@ class ResultTest: XCTestCase {
         
         guard let err = (new.error as NSError?) else {
             
-            XCTFail()
+            XCTFail("Must not reach.")
+            
             return
         }
         
@@ -188,7 +195,7 @@ class ResultTest: XCTestCase {
             return Double(s)!
         }
         
-        XCTAssertEqual(result.map( { g(f($0)) } ),
+        XCTAssertEqual(result.map({ g(f($0)) }),
                        result.map(f).map(g))
     }
     
@@ -207,7 +214,7 @@ class ResultTest: XCTestCase {
         ///
         let result = Result(2)
         
-        XCTAssertEqual(result.flatMap( { Result($0) } ),
+        XCTAssertEqual(result.flatMap({ Result($0) }),
                        result)
         
         ///
@@ -216,7 +223,7 @@ class ResultTest: XCTestCase {
             return Result(Double(s)!)
         }
         
-        XCTAssertEqual(result.flatMap( { f($0).flatMap(g) } ),
+        XCTAssertEqual(result.flatMap({ f($0).flatMap(g) }),
                        result.flatMap(f).flatMap(g))
     }
 }
