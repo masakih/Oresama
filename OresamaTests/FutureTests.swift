@@ -407,7 +407,7 @@ class FutureTests: XCTestCase {
         waitForExpectations(timeout: 1)
     }
     
-    func testRecoverWithThrow() {
+    func testRecoverThrow() {
         
         let ex = expectation(description: "Future")
         
@@ -481,6 +481,122 @@ class FutureTests: XCTestCase {
                         throw $0
                 }
                 return 10
+            }
+            .onSuccess {
+                XCTAssertEqual($0, 5)
+                ex.fulfill()
+            }
+            .onFailure { error in
+                XCTFail("Hoge: \(error)")
+                ex.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1)
+    }
+    
+    
+    func testRecoverWith() {
+        
+        let ex = expectation(description: "Future")
+        
+        Future<Int>(FutureTestError.testError)
+            .recoverWith { error in
+                Future {
+                    guard let e = error as? FutureTestError,
+                        e == FutureTestError.testError else {
+                            throw error
+                    }
+                    return 10
+                }
+            }
+            .onSuccess {
+                XCTAssertEqual($0, 10)
+                ex.fulfill()
+            }
+            .onFailure { error in
+                XCTFail("Hoge: \(error)")
+                ex.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1)
+    }
+    
+    func testRecoverWithThrow() {
+        
+        let ex = expectation(description: "Future")
+        
+        Future<Int>(FutureTestError.testError)
+            .recoverWith { _ in
+                Future(FutureTestError.testError2)
+            }
+            .onSuccess {
+                XCTFail("Fuga: \($0)")
+                ex.fulfill()
+            }
+            .onFailure { _ in
+                ex.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1)
+    }
+    
+    func testRecoverWithFailure1() {
+        let ex = expectation(description: "Future")
+        
+        let f1 = Future<Int>(FutureTestError.testError)
+        
+        Future(2)
+            .flatMap { n1 in f1.map { n2 in n1 * n2 } }
+            .recoverWith { _ in Future(-1000) }
+            .onSuccess { val in
+                if val > 0 {
+                    XCTFail()
+                }
+                ex.fulfill()
+            }
+            .onFailure { _ in
+                ex.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1)
+    }
+    func testRecoverWithFailure2() {
+        let ex = expectation(description: "Future")
+        
+        let f1 = Future<Int> {
+            sleep(1)
+            return 1
+        }
+        
+        Future<Int>(FutureTestError.testError)
+            .flatMap { n1 in f1.map { n2 in n1 * n2 } }
+            .recoverWith { _ in Future(-10000) }
+            .onSuccess { val in
+                if val > 0 {
+                    XCTFail()
+                }
+                ex.fulfill()
+            }
+            .onFailure { _ in
+                ex.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1)
+    }
+    
+    func testRecoverWithSuccess() {
+        
+        let ex = expectation(description: "Future")
+        
+        Future<Int>(5)
+            .recoverWith { error in
+                Future {
+                    guard let e = error as? FutureTestError,
+                        e == FutureTestError.testError else {
+                            throw error
+                    }
+                    return 10
+                }
             }
             .onSuccess {
                 XCTAssertEqual($0, 5)

@@ -263,6 +263,16 @@ public extension Future {
         }
     }
     
+    func recoverWith(_ s: @escaping (Error) -> Future) -> Future {
+        
+        switch self.await().value! {
+            
+        case .value: return self
+            
+        case let .error(error): return s(error)
+        }
+    }
+    
     @discardableResult
     func andThen(_ f: @escaping (Result<T>) -> Void) -> Future {
         
