@@ -218,14 +218,11 @@ public extension Future {
         return Promise()
             .completeWith {
                 
-                switch self.await().value {
+                switch self.await().value! {
                     
-                case .value(let v)?: return t(v)
+                case let .value(value): return t(value)
                     
-                case .error(let e)?: return Future<U>(e)
-                    
-                case nil: fatalError("Future not complete")
-                    
+                case let .error(error): return Future<U>(error)
                 }
             }
             .future
@@ -236,9 +233,9 @@ public extension Future {
         return Promise()
             .complete {
                 
-                if case let .value(v)? = self.await().value, f(v) {
+                if case let .value(value) = self.await().value!, f(value) {
                     
-                    return .value(v)
+                    return .value(value)
                 }
                 
                 return .error(FutureError.noSuchElement)
@@ -272,10 +269,7 @@ public extension Future {
         return Promise<T>()
             .complete {
                 
-                guard let result = self.await().result else {
-                    
-                    fatalError("Future not complete")
-                }
+                let result = self.await().result!
                 
                 f(result)
                 
