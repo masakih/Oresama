@@ -231,7 +231,7 @@ public extension Future {
             .future
     }
     
-    func filter(_ f: @escaping (T) -> Bool) -> Future<T> {
+    func filter(_ f: @escaping (T) -> Bool) -> Future {
         
         return Promise()
             .complete {
@@ -246,7 +246,7 @@ public extension Future {
             .future
     }
     
-    func recover(_ s: @escaping (Error) throws -> T) -> Future<T> {
+    func recover(_ s: @escaping (Error) throws -> T) -> Future {
         
         return transform { result in
             
@@ -267,7 +267,7 @@ public extension Future {
     }
     
     @discardableResult
-    func andThen(_ f: @escaping (Result<T>) -> Void) -> Future<T> {
+    func andThen(_ f: @escaping (Result<T>) -> Void) -> Future {
         
         return Promise<T>()
             .complete {
