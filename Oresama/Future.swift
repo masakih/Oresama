@@ -95,6 +95,8 @@ public final class Future<T> {
         
         willSet {
             
+            callbacksLock.lock()
+            
             if result != nil {
                 
                 fatalError("Result already seted.")
@@ -103,15 +105,14 @@ public final class Future<T> {
         
         didSet {
             
+            defer { callbacksLock.unlock() }
+            
             guard let result = self.result else {
                 
                 fatalError("set nil to result.")
             }
             
             semaphore?.signal()
-            
-            callbacksLock.lock()
-            defer { callbacksLock.unlock() }
             
             callbacks.forEach { f in f(result) }
             callbacks = []
