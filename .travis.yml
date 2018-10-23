@@ -1,5 +1,15 @@
 language: objective-c
 osx_image: xcode10
 
+before_install:
+  - gem install xcpretty
+
 script:
-    - xcodebuild clean test -scheme Host | xcpretty -f `xcpretty-travis-formatter`
+  set -o pipefail &&
+  travis_retry
+  xcodebuild test
+  -scheme Host
+  CODE_SIGN_IDENTITY=""
+  CODE_SIGNING_REQUIRED=NO
+  | xcpretty
+  
