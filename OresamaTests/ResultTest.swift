@@ -156,9 +156,17 @@ class ResultTest: XCTestCase {
         let result1 = Result(1)
         let result2 = Result(1)
         let result3 = Result(2)
+        let result4 = Result<Int>(NSError(domain: "hoge", code: 0, userInfo: nil))
+        let result5 = Result<Int>(NSError(domain: "hoge", code: 0, userInfo: nil))
+        let result6 = Result<Int>(NSError(domain: "hoge", code: 1, userInfo: nil))
         
         XCTAssertEqual(result1, result2)
         XCTAssertNotEqual(result1, result3)
+        
+        XCTAssertEqual(result4, result5)
+        XCTAssertNotEqual(result4, result6)
+        
+        XCTAssertNotEqual(result1, result4)
     }
     
     func testFunctor() {

@@ -655,9 +655,17 @@ class FutureTests: XCTestCase {
         let future1 = Future(1)
         let future2 = Future(1)
         let future3 = Future(2)
+        let future4 = Future<Int>(NSError(domain: "hoge", code: 0, userInfo: nil))
+        let future5 = Future<Int>(NSError(domain: "hoge", code: 0, userInfo: nil))
+        let future6 = Future<Int>(NSError(domain: "hoge", code: 1, userInfo: nil))
         
         XCTAssertEqual(future1, future2)
         XCTAssertNotEqual(future1, future3)
+        
+        XCTAssertEqual(future4, future5)
+        XCTAssertNotEqual(future4, future6)
+        
+        XCTAssertNotEqual(future4, future1)
     }
     
     func testFunctor() {
