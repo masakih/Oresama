@@ -1,9 +1,6 @@
 language: objective-c
 osx_image: xcode10
 
-before_install:
-  - gem install xcpretty
-
 script:
   set -o pipefail &&
   travis_retry
