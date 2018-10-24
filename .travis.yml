@@ -6,7 +6,4 @@ script:
   travis_retry
   xcodebuild test
   -scheme Host
-  CODE_SIGN_IDENTITY=""
-  CODE_SIGNING_REQUIRED=NO
   | xcpretty
-  
