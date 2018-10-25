@@ -21,7 +21,7 @@ public final class Promise<T> {
     
     // MARK: - Public
     
-    public let future: Future<T> = Future<T>()
+    public let future = Future<T>()
     
     ///
     public func complete(_ result: Result<T>) {
