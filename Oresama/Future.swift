@@ -279,7 +279,7 @@ public extension Future {
     @discardableResult
     func andThen(_ f: @escaping (Result<T>) -> Void) -> Future {
         
-        return Promise<T>()
+        return Promise()
             .complete {
                 
                 let result = self.await().result!
