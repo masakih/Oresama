@@ -161,29 +161,25 @@ public extension Future {
     @discardableResult
     func onSuccess(_ callback: @escaping (T) -> Void) -> Self {
         
-        onComplete { result in
+        return onComplete { result in
             
             if case let .value(value) = result {
                 
                 callback(value)
             }
         }
-        
-        return self
     }
     
     @discardableResult
     func onFailure(_ callback: @escaping (Error) -> Void) -> Self {
         
-        onComplete { result in
+        return onComplete { result in
             
             if case let .error(error) = result {
                 
                 callback(error)
             }
         }
-        
-        return self
     }
 }
 
