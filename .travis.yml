@@ -1,0 +1,9 @@
+language: objective-c
+osx_image: xcode10
+
+script:
+  set -o pipefail &&
+  travis_retry
+  xcodebuild test
+  -scheme Host
+  | xcpretty
