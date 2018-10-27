@@ -171,7 +171,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4CEB741217DF855006809F7 /* Build configuration list for PBXNativeTarget "Oresama" */;
 			buildPhases = (
-				F4D00282217F58CD00D083D6 /* ShellScript */,
 				F4CEB728217DF854006809F7 /* Headers */,
 				F4CEB729217DF854006809F7 /* Sources */,
 				F4CEB72A217DF854006809F7 /* Frameworks */,
@@ -292,26 +291,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		F4D00282217F58CD00D083D6 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F4CEB729217DF854006809F7 /* Sources */ = {
