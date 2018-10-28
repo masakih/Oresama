@@ -23,6 +23,8 @@ public final class Promise<T> {
     
     public let future = Future<T>()
     
+    public init() {}
+    
     ///
     public func complete(_ result: Result<T>) {
         
